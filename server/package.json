@@ -1,0 +1,16 @@
+{
+  "name": "market",
+  "version": "0.0.0",
+  "author": "Nikita Popov <losnikitos@gmail.com>",
+  "debversion": "DEB_VERSION",
+  "dependencies": {
+    "express": "~4.0.0"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  }
+}
