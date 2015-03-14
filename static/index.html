@@ -1,10 +1,24 @@
 <!doctype html>
-<html lang="ru">
+<html ng-app lang="ru">
 <head>
     <meta charset="UTF-8">
+    <!-- build:css /css/site.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <!-- endbuild -->
     <title>Поиск товаров в Яндекс.Маркете</title>
 </head>
 <body>
-    Проверка
+<div>
+    <label>Name:</label>
+    <input type="text" ng-model="yourName" placeholder="Enter a name here">
+    <hr>
+    <h1>Hello {{yourName}}!</h1>
+</div>
+
+    <!-- build:js /js/site.js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
