@@ -1,24 +1,35 @@
 <!doctype html>
-<html ng-app lang="ru">
-<head>
+<html ng-app="app" lang="ru">
+<head >
     <meta charset="UTF-8">
     <!-- build:css /css/site.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="upload/upload.css"/>
     <!-- endbuild -->
     <title>Поиск товаров в Яндекс.Маркете</title>
 </head>
-<body>
-<div>
-    <label>Name:</label>
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <hr>
-    <h1>Hello {{yourName}}!</h1>
+
+<body ng-controller="AppController" nv-file-drop uploader="uploader">
+
+<div class="container">
+    <div  class="row">
+        <div class="col-md-3">
+            <h3>Select files</h3>
+            <div class="well my-drop-zone" nv-file-over uploader="uploader">
+                Put XLS or XLSX here
+            </div>
+        </div>
+    </div>
 </div>
 
-    <!-- build:js /js/site.js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbuild -->
+
+
+<!-- build:js /js/site.js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
+<script src="upload/upload.js"></script>
+<!-- endbuild -->
 </body>
 </html>
