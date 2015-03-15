@@ -19,6 +19,7 @@
     "angular-bootstrap": "~0.12.1",
     "bootstrap": "~3.3.2",
     "angular-file-upload": "~1.1.5",
-    "js-xls": "~0.7.5"
+    "js-xls": "~0.7.5",
+    "angular-ui-grid": "~3.0.0"
   }
 }

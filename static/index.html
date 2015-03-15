@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <!-- build:css /css/site.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.min.css"/>
     <link rel="stylesheet" href="upload/upload.css"/>
     <link rel="stylesheet" href="index.css"/>
     <!-- endbuild -->
@@ -15,10 +16,14 @@
 <div class="container">
     <div  class="row">
         <div class="col-md-3">
-            <h3>Select files</h3>
+            <h3>Upload file</h3>
             <div class="well my-drop-zone" nv-file-over uploader="uploader">
                 Put XLS or XLSX here
             </div>
+        </div>
+        <div ng-show="grid.data.length > 0" class="col-md-9">
+            <h3>Goods</h3>
+            <div ui-grid="grid" class="myGrid"></div>
         </div>
     </div>
 </div>
@@ -30,6 +35,7 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
+<script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
 <script src="bower_components/js-xls/dist/xls.full.min.js"></script>
 <script src="upload/upload.js"></script>
 <!-- endbuild -->

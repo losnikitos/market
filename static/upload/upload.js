@@ -1,19 +1,18 @@
 angular
-    .module('app', ['angularFileUpload'])
+    .module('app', ['angularFileUpload', 'ui.grid'])
     .controller('AppController', function ($scope, FileUploader) {
         $scope.uploader = new FileUploader();
+        $scope.grid = {};
 
         $scope.uploader.onAfterAddingFile = function (fileItem) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 var data = e.target.result;
-                var workbook = XLS.read(data, {type: 'binary'});
+                var workbook = XLS.read(data, { type: 'binary' });
 
-                $scope.goods = workbook.Strings.map(function(str) {return str.t});
-
-                //var Sheet1A1 = workbook.Sheets[workbook.SheetNames[0]]['A1'].v;
-
-                console.log($scope.goods);
+                var goods = workbook.Strings.map(function (str) { return str.t });
+                $scope.grid.data = goods.map(function (good) { return { name: good, price: '' } });
+                $scope.$apply();
             };
             reader.readAsBinaryString(fileItem._file);
         };
