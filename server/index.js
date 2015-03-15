@@ -8,3 +8,5 @@ var server = app.listen(config.server.port, function () {
     var port = server.address().port;
     console.log('Listening http://localhost://%s', port)
 });
+
+require('./router')(app);
