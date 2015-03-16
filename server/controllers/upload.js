@@ -10,9 +10,14 @@ exports.save = require('multer')({
 );
 
 exports.parse = function (req, res, next) {
-    var wb = XLS.readFile(req.files.file.path);
-    var goods = wb.Strings.map(function (str) {
-        return str.t
-    });
-    res.send(goods);
+    try {
+        var wb = XLS.readFile(req.files.file.path);
+        var goods = wb.Strings.map(function (str) {
+            return str.t
+        });
+        res.send(goods);
+    }
+    catch(e) {
+        res.send(400, e);
+    }
 };

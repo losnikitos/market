@@ -20,6 +20,8 @@
             <div class="well my-drop-zone" nv-file-over uploader="uploader">
                 Put XLS or XLSX here
             </div>
+            <div class="alert alert-{{upload.status}}" role="alert">{{upload.message}}</div>
+
         </div>
         <div ng-show="grid.data.length > 0" class="col-md-9">
             <h3>Goods</h3>
