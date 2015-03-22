@@ -1,4 +1,4 @@
-var XLS = require('xlsjs');
+var parse = require('../lib/parse');
 
 exports.save = require('multer')({
         dest: './uploads/',
@@ -11,10 +11,7 @@ exports.save = require('multer')({
 
 exports.parse = function (req, res, next) {
     try {
-        var wb = XLS.readFile(req.files.file.path);
-        var goods = wb.Strings.map(function (str) {
-            return str.t
-        });
+        var goods = parse(req.files.file.path);
         res.send(goods);
     }
     catch(e) {
