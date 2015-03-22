@@ -18,10 +18,10 @@
         <div class="col-md-3">
             <h3>Upload file</h3>
             <div class="well my-drop-zone" nv-file-over uploader="uploader">
-                Put XLS or XLSX here
+                Drag and drop XLSX here
             </div>
             <div class="alert alert-{{upload.status}}" role="alert">{{upload.message}}</div>
-
+            <div ng-show="wait>0">{{wait}} goods left</div>
         </div>
         <div ng-show="grid.data.length > 0" class="col-md-9">
             <h3>Goods</h3>
